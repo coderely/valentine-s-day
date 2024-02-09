@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="log_container">
+        <div class="wrap_heart">
+        <div class="form" id="log-in">
+            <h1 class="form_title">Login</h1>
+            <div class="input_group">
+                <div class="username">
+                    <input type="text" placeholder="Username" name="username" id="username">
+                </div>
+                <div class="password">
+                    <input type="password" name="password" id="password" placeholder="Password">
+                </div>
+            </div>
+            <button class="login_btn">Login</button>
+            <p id="error"></p>
+        </div>
+        </div>
+    </div>
+
+    <script>
+         // Log in
+         const username = document.querySelector('.username input');
+        const password = document.querySelector(".password input");
+        const btn = document.querySelector(".login_btn");
+        const error = document.getElementById("error");
+        
+        username.addEventListener("keypress", (e)=>{
+            if(e.key === "Enter"){
+                e.preventDefault();
+                btn.click();
+            }
+        })
+        password.addEventListener("keypress", (e)=>{
+            if(e.key === "Enter"){
+                e.preventDefault();
+                btn.click();
+            }
+        })
+        btn.addEventListener("click", () => {
+            if (!username.value || !password.value) {
+                error.style.display = "block";
+                error.innerHTML = "Enter your Username or Password";
+            } else if (username.value === "admin" && password.value === "12345") {
+                // Redirect to another link
+                window.location.href = "main.html"; // Replace with your desired link
+            } else {
+                error.style.display = "block";
+                error.innerHTML = "Invalid username or password";
+            }
+        });
+    </script>
+</body>
+</html>
