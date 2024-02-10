@@ -196,15 +196,16 @@ p#error{
 }
 @media only screen and (max-width:600px) {
     p{
-        font-size: 20px;
+        font-size: 40px;
+        width: 200px;
     }
     .img-con img{
         width: 200px;
     }
     .message{
-        font-size: 18px;
+        font-size: 28px;
         font-weight: normal;
-        width: 100%;
+        width: 300px;
         min-width: 200px;
         padding: 20px;
         margin: 0px auto;
